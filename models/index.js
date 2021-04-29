@@ -5,21 +5,21 @@ const Game = require('./Game');
 const Race = require('./Race');
 const LinkTag = require('./LinkTag');
 
-// Products belongsTo Category
+// Character belongsTo games
 Character.belongsTo(Game, {
 foreignKey: 'game_name',
 });
-// Categories have many Products
+// Games have many Characters
 Game.hasMany(Character, {
   foreignKey: 'game_name',
 });
-// Products belongToMany Tags (through ProductTag)
+// Character belongTo factions (through LinkTag)
 Character.belongsTo(Faction, {
   through: LinkTag,
   foreignKey: 'faction_id',
 });
 
-// Tags belongToMany Products (through ProductTag)
+// Race belongToMany Character (through LinkTag)
 Race.belongsToMany(Character, {
   through: LinkTag,
   foreignKey: 'race_id',
