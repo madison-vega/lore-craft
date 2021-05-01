@@ -1,0 +1,9 @@
+nav bar with login, register, view saved characters, create a character option, search bar
+    forum
+
+https://wireframe.cc/atR4Bu
+
+
+Madison: views, public
+Cordo: seeds, db, models-user model 
+Angela: controllers/routes, 
