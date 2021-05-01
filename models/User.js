@@ -27,9 +27,16 @@ User.init(
       validate: {
         len: [4]
       }
-    }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      }
   },
-  {
+
     hooks: {
     async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
@@ -47,6 +54,6 @@ User.init(
     underscored: true,
     modelName: 'User'
   }
-);
+  );
 
 module.exports = User;
