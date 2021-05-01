@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class LinkTag extends Model {}
+class LinkTag extends Model { }
 
 LinkTag.init(
   {
@@ -20,8 +20,8 @@ LinkTag.init(
         model: 'character',
         key: 'id',
       },
-      
-      
+
+
     },
     game_id: {
       type: DataTypes.INTEGER,
@@ -32,21 +32,29 @@ LinkTag.init(
       },
     },
     race_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'race',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'race',
+        key: 'id',
       },
-      faction_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'faction',
-          key: 'id',
-        },
-      }
+    },
+    faction_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'faction',
+        key: 'id',
+      },
+    }
+      user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    }
   },
   {
     sequelize,
