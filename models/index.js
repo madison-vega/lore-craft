@@ -4,6 +4,7 @@ const Faction = require('./Faction');
 const Game = require('./Game');
 const Race = require('./Race');
 const LinkTag = require('./LinkTag');
+const User = require('./User');
 
 // Character belongsTo games
 Character.belongsTo(Game, {
@@ -22,7 +23,12 @@ Character.belongsTo(Faction, {
 // Race belongToMany Character (through LinkTag)
 Race.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'race_id',
+  foreignKey: 'character_id',
+});
+
+Faction.hasMany(Character, {
+  through: LinkTag,
+  foreignKey: 'character_id'
 });
 
 module.exports = {
@@ -31,4 +37,5 @@ module.exports = {
   Faction,
   Race,
   LinkTag,
+  User
 };
