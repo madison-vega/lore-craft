@@ -6,6 +6,8 @@ const Race = require('./Race');
 const LinkTag = require('./LinkTag');
 const NewCharacter = require('./NewCharacter');
 const User = require('./User');
+const sequelize = require('../config/connection.js');
+
 
 // Character belongsTo games
 Character.belongsTo(Game, {
@@ -20,16 +22,19 @@ Character.belongsTo(Faction, {
   through: LinkTag,
   foreignKey: 'faction_id',
 });
+Faction.hasMany(Character, {
+  through: LinkTag,
+  foreignKey: 'faction_id',
+});
 
 // Race belongToMany Character (through LinkTag)
 Race.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'character_id',
+  foreignKey: 'Character_id',
 });
-
-Faction.hasMany(Character, {
+Character.hasOne(Race, {
   through: LinkTag,
-  foreignKey: 'character_id'
+  foreignKey: 'Race_id',
 });
 
 NewCharacter.belongsTo(User, {
