@@ -1,56 +1,69 @@
 const { LinkTag } = require('../models');
 
 const LinkTagData = [
+  {
+    character_id: 1,
+    game_id: 3,
+    race_id: 1,
+    faction_id: 1,
+  },
+  {
+    character_id: 2,
+    game_id: 3,
+    race_id: 1,
+    faction_id: 1,
+  },
+  {
+    character_id: 3,
+    game_id: 3,
+    race_id: 3,
+    faction_id: 1,
+  },
+  {
+    character_id: 4,
+    game_id: 3,
+    race_id: 5,
+    faction_id: 1,
+  },
+  {
+    character_id: 5,
+    game_id: 3,
+    race_id: 13,
+    faction_id: 2,
+  },
+  {
+    character_id: 6,
+    game_id: 6,
+    race_id: 1,
+    faction_id: 1,
+  },
+  {
+    character_id: 7,
+    game_id: 6,
+    race_id: 5,
+    faction_id: 1,
+  },
+  {
+    character_id: 8,
+    game_id: 5,
+    race_id: 14,
+    faction_id: 2,
+  },
 //   {
-//     product_id: 1,
-//     tag_id: 6,
+//     character_id: 1,
+//     game_id: 6,
+//     race_id: 0,
+//     faction_id: 1,
 //   },
 //   {
-//     product_id: 1,
-//     tag_id: 7,
+//     character_id: 1,
+//     game_id: 6,
+//     race_id: 0,
+//     faction_id: 1,
 //   },
-//   {
-//     product_id: 1,
-//     tag_id: 8,
-//   },
-//   {
-//     product_id: 2,
-//     tag_id: 6,
-//   },
-//   {
-//     product_id: 3,
-//     tag_id: 1,
-//   },
-//   {
-//     product_id: 3,
-//     tag_id: 3,
-//   },
-//   {
-//     product_id: 3,
-//     tag_id: 4,
-//   },
-//   {
-//     product_id: 3,
-//     tag_id: 5,
-//   },
-//   {
-//     product_id: 4,
-//     tag_id: 1,
-//   },
-//   {
-//     product_id: 4,
-//     tag_id: 2,
-//   },
-//   {
-//     product_id: 4,
-//     tag_id: 8,
-//   },
-//   {
-//     product_id: 5,
-//     tag_id: 3,
-//   },
+  
 ];
 
-const seedLinktag = () => LinkTag.bulkCreate(LinkTagData);
+const seedLinkTag = () => LinkTag.bulkCreate(LinkTagData);
 
 module.exports = seedLinkTag;
