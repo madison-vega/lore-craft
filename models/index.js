@@ -22,19 +22,19 @@ Character.belongsTo(Faction, {
   through: LinkTag,
   foreignKey: 'faction_id',
 });
-Faction.hasMany(Character, {
+Faction.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'faction_id',
+  foreignKey: 'character_id',
 });
 
 // Race belongToMany Character (through LinkTag)
 Race.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'Character_id',
+  foreignKey: 'character_id',
 });
-Character.hasOne(Race, {
+Character.belongsToMany(Race, {
   through: LinkTag,
-  foreignKey: 'Race_id',
+  foreignKey: 'race_id',
 });
 
 NewCharacter.belongsTo(User, {
@@ -42,7 +42,7 @@ NewCharacter.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-User.hasMany(NewCharacter, {
+User.belongsToMany(NewCharacter, {
   through: LinkTag,
   foreignKey: 'user_id'
 })

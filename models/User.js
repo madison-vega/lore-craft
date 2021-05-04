@@ -35,7 +35,8 @@ User.init(
       validate: {
         isEmail: true,
       }
-  },
+    }
+  },{
 
     hooks: {
     async beforeCreate(newUserData) {
