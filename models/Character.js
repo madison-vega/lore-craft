@@ -28,8 +28,8 @@ Character.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    Race: {
-      type: DataTypes.STRING,
+    race: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'race',
         key: 'id',
@@ -41,8 +41,7 @@ Character.init(
       allowNull: false
     },
     
-
-    faction: {
+    faction_char: {
       type: DataTypes.INTEGER,
       references: {
         model: 'faction',
@@ -55,7 +54,7 @@ Character.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'character',
+    modelName: 'Character',
   }
 );
 
