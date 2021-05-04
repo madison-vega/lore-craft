@@ -41,7 +41,6 @@ router.get('/', (req, res) => {
       });
   });
 
-
   router.post("/", (req, res) => {
     User.create({
       username: req.body.username,
