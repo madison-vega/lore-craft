@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const wAuth = require('../../utils');
+const wAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -40,7 +40,6 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
-
 
   router.post("/", (req, res) => {
     User.create({
@@ -100,7 +99,6 @@ router.get('/', (req, res) => {
     } else {
         res.status(404).end();
     }
-
 });
 
 
