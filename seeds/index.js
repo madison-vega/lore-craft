@@ -1,7 +1,7 @@
 const seedFaction = require('./faction-seeds');
 const seedCharacter = require('./character-seeds');
 const seedGame = require('./game-seeds');
-const seedRace = require('./race-seeds')
+const seedRace = require('./race-seeds');
 const seedLinkTag = require('./link-tag-seeds');
 
 const sequelize = require('../config/connection');
