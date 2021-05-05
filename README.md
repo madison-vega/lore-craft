@@ -2,6 +2,8 @@
 
 ## Description
 
+As gamers, sometimes we may get so caught up in gameplay mechanics that we don't realize the amount of time and creativity developers put in to create the amazing worlds our player characters live in and the storylines they follow.  With our website we make it a one stop shop to immerse yourelf in the background and lore of your favorite game.  We provide information about many different aspects of the game.  You can even add your own player character to your list and add their backstory and lore as well!    
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -13,30 +15,32 @@
 
 ## Installation
 
+No installation necessary!  This application is deployed to Heroku, simply follow the link you will be taken straight there.
+<br>
+[LoreCraft](herokulink.com)
 
 ## Usage
 
+
+
 ## Credits
 
+This is a list of the npm packages we utilized in order to develop our website.<br>
 
-[express-handlebars](https://www.npmjs.com/package/express-handlebars)
-<br>
-
-[MySQL2](https://www.npmjs.com/package/mysql2)
-<br>
-
-[Sequelize](https://www.npmjs.com/package/sequelize)
-<br>
-
+[express-handlebars](https://www.npmjs.com/package/express-handlebars)<br>
+[MySQL2](https://www.npmjs.com/package/mysql2)<br>
+[Sequelize](https://www.npmjs.com/package/sequelize)<br>
 [dotenv package](https://www.npmjs.com/package/dotenv)<br>
 [bcrypt package](https://www.npmjs.com/package/bcrypt)<br>
 [express-session](https://www.npmjs.com/package/express-session)<br>
 [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)<br>
 
-## Credits
+This is our production team.<br>
 
-
-
+[Madison Vega](https://github.com/madison-vega)<br>
+[Angela Rubio](https://github.com/neptune92)<br>
+[Samuel Cordova](https://github.com/Cordovas-cmd)<br>
+[Core Alcoser](https://github.com/Core-Creates)<br>
 
 
 
@@ -66,6 +70,6 @@ SOFTWARE.
 
 ## Questions
 
-If you have any further questions please feel free to contact me at madison.r.vega@gmail.com.  
-You can also view my Github profile for further contact options and to view my portfolio
-[madison-vega](https://github.com/madison-vega).
+<p>If you have any further questions please feel free to reach out to us. 
+You can view our Github profiles for contact options and to view our portfolios.<p>
+
