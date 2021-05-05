@@ -30,7 +30,7 @@ Faction.belongsToMany(Character, {
 // Race belongToMany Character (through LinkTag)
 Race.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'character_id',
+  foreignKey: 'Character_id',
 });
 Character.belongsToMany(Race, {
   through: LinkTag,
