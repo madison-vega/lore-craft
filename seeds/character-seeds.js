@@ -67,6 +67,6 @@ const CharacterData = [
   },
 ];
 
-const seedCharacters = () => Character.bulkCreate(characterData);
+const seedCharacters = () => Character.bulkCreate(CharacterData);
 
 module.exports = seedCharacters;
