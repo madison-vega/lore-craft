@@ -2,7 +2,7 @@ const { Character } = require('../models');
 
 const characterData = [
   {
-    character_name: 'Sylvanus Windrunner',
+    character_name: 'Sylvanas Windrunner',
     age: 2800,
     first_appearance: 3,
     faction_char: 2,
@@ -67,6 +67,6 @@ const characterData = [
   },
 ];
 
-const seedCharacters = () => Character.bulkCreate(CharacterData);
+const seedCharacters = () => Character.bulkCreate(characterData);
 
 module.exports = seedCharacters;
