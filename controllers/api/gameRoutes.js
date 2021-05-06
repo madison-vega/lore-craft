@@ -1,17 +1,18 @@
 const router = require('express').Router();
-const { Game, Faction, Race, LinkTag } = require('../../models');
+const { Game, Character, Faction, Race, LinkTag } = require('../../models');
 
 
 router.get('/', async (req, res) => {
+    console.log(req.body.game_name)
     try {
-        let allGames = Game.findAll({
-            include: [Faction, Race, LinkTag],
+        let allGames = await Game.findAll({
+            include: Character,
             where: {
-                faction_name: req.body.userInput
+                game_name: req.body.game_name
             }
         
         });
-        res.status(200).status(allGames)
+        res.status(200).json(allGames)
     } catch (err) {
         res.status(500).json(err);
     }

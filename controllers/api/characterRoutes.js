@@ -1,10 +1,9 @@
 const router = require('express').Router();
-const { Character, Faction, Game, Race, LinkTag } = require('../../models')
+const { Character, Faction, Game, Race } = require('../../models')
 
 router.get('/', async (req, res) => {
     try {
         const character = await Character.findAll({
-            include: [Faction, Game, Race, LinkTag]
         });
         res.status(200).json(character)
     } catch (err) {
@@ -14,7 +13,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const oneChar = await Character.findByPk(req.params.id, {
-            include: [Faction, Game, Race, LinkTag]
+            include: [Faction, Game, Race]
         })
         res.status(200).json(oneChar)
     } catch (err) {
