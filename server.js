@@ -24,6 +24,7 @@ const sess = {
 };
 
 app.use(session(sess));
+app.use(cors());
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
