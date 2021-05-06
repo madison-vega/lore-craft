@@ -45,8 +45,8 @@ const LinkTagData = [
   },
   {
     character_id: 8,
-    game_id: 5,
-    race_id: 14,
+    game_id: 2,
+    race_id: 13,
     faction_id: 2,
   },
 //   {
