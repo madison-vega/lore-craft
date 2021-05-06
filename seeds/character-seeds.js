@@ -3,7 +3,7 @@ const { Character } = require('../models');
 const characterData = [
   {
     character_name: 'Sylvanus Windrunner',
-    age: 23,
+    age: 2800,
     first_appearance: 3,
     faction_char: 2,
     race: 1,
@@ -11,7 +11,7 @@ const characterData = [
   },
   {
     character_name: 'Prince Arthus Menethil',
-    age: 90,
+    age: 31,
     first_appearance: 3,
     faction_char: 1,
     race: 1,
@@ -19,7 +19,7 @@ const characterData = [
   },
   {
     character_name: 'Muradin Bronzebeard',
-    age: 22,
+    age: 00,
     first_appearance: 3,
     faction_char: 1,
     race: 3,
@@ -27,7 +27,7 @@ const characterData = [
   },
   {
     character_name: 'Illidian Stormrage',
-    age: 24,
+    age: 15000,
     first_appearance: 3,
     faction_char: 1,
     race: 5,
@@ -35,7 +35,7 @@ const characterData = [
   },
   {
     character_name: 'Thrall',
-    age: 29,
+    age: 31,
     first_appearance: 3,
     faction_char: 2,
     race: 13,
@@ -43,7 +43,7 @@ const characterData = [
   },
   {
     character_name: 'Jaina Proudmoore',
-    age: 29,
+    age: 37-40,
     first_appearance: 3,
     faction_char: 1,
     race: 1,
@@ -51,7 +51,7 @@ const characterData = [
   },
   {
     character_name: 'Malfurion Stormragre',
-    age: 29,
+    age: 153200,
     first_appearance: 3,
     faction_char: 1,
     race: 5,
@@ -67,6 +67,6 @@ const characterData = [
   },
 ];
 
-const seedCharacters = () => Character.bulkCreate(characterData);
+const seedCharacters = () => Character.bulkCreate(CharacterData);
 
 module.exports = seedCharacters;
