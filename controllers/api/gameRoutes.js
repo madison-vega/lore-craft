@@ -19,62 +19,23 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        let 
-
+        let oneGame = await Game.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: {
+                model: Faction, Race, LinkTag,
+                attributes: []
+            }
+        });
+        res.status(200).json(oneGame)
     } catch (err) {
-
-
-    }
-
-    Game.findOne({
-        where: {
-            id: req.params.id
-        },
-        include: {
-            model: Faction, Race, LinkTag,
-            attributes: []
-        }
-    })
-    .then(gameAdded => res.json(gameAdded))
-    .catch(err => {
-        console.log(err);
-    });
-});
-
-
-router.post('/', async (req, res) => {
-  Game.create({
-      game_name: req.body.game_name
-  })
-    .then(gameAdded => res.json(gameAdded))
-    .catch(err => {
-        console.log(err);
         res.status(500).json(err);
-    });
-});
-
-
-router.put('/id', (req, res) => {
-    Game.update({
-        game_name: req.body.game_name
-    },
-    where, {
-        id: req.params.id
     }
-    )
-    .then(gameAdded => {
-        if (!gameAdded) {
-            res.status(404).json({ message: 'Sorry no game found with this id'});
-            return;
-        }
-        res.json(gameAdded);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
 });
+
+
 
 module.exports = router;
