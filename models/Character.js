@@ -25,7 +25,7 @@ Character.init(
       allowNull: false
     },
     first_appearance: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     race: {

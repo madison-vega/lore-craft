@@ -1,15 +1,15 @@
 const { Faction } = require('../models');
 
-const FactionData = [
+const factionData = [
   {
-    Faction_name: 'Alliance',
+    faction_name: 'Alliance',
   },
   {
-    Faction_name: 'Horde',
+    faction_name: 'Horde',
   },
  
 ];
 
-const seedFaction = () => Faction.bulkCreate(FactionData);
+const seedFaction = () => Faction.bulkCreate(factionData);
 
 module.exports = seedFaction;

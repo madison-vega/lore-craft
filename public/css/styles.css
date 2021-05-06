@@ -6,9 +6,8 @@
     align-items: stretch;
     display: flex;
     flex-shrink: 0;
-    min-height: 150px;
-    min-width: 100%;
 }
  .navbar-item{
     min-height: 150px;
  }
+
