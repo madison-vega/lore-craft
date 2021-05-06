@@ -4,10 +4,14 @@ const { Game, Faction, Race, LinkTag } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        let gameAdded = Game.findAll({
-            include: [Faction, Race, LinkTag]
+        let allGames = Game.findAll({
+            include: [Faction, Race, LinkTag],
+            where: {
+                faction_name: req.body.userInput
+            }
+        
         });
-        res.status(200).status(gameAdded)
+        res.status(200).status(allGames)
     } catch (err) {
         res.status(500).json(err);
     }
@@ -15,6 +19,14 @@ router.get('/', async (req, res) => {
 
 
 router.get('/:id', (req, res) => {
+    try {
+        let 
+
+    } catch (err) {
+
+
+    }
+
     Game.findOne({
         where: {
             id: req.params.id

@@ -11,30 +11,33 @@ const sequelize = require('../config/connection.js');
 
 // Character belongsTo games
 Character.belongsTo(Game, {
-foreignKey: 'game_name',
+  through: LinkTag,
+  foreignKey: 'first_appearance',
 });
+
 // Games have many Characters
 Game.hasMany(Character, {
-  foreignKey: 'game_name',
+  
+  foreignKey: 'first_appearance',
 });
 // Character belongTo factions (through LinkTag)
 Character.belongsTo(Faction, {
   through: LinkTag,
-  foreignKey: 'faction_id',
+  foreignKey: 'faction_char',
 });
 Faction.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'character_id',
+  foreignKey: 'id',
 });
 
 // Race belongToMany Character (through LinkTag)
 Race.belongsToMany(Character, {
   through: LinkTag,
-  foreignKey: 'Character_id',
+  foreignKey: 'id',
 });
 Character.belongsToMany(Race, {
   through: LinkTag,
-  foreignKey: 'race_id',
+  foreignKey: 'race',
 });
 
 NewCharacter.belongsTo(User, {
