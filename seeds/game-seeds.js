@@ -1,12 +1,12 @@
 const { Game } = require('../models');
 
 const gameData = [
-    {
-        game_name: 'Warcraft 1',
-      },
-    {
-        game_name: 'Warcraft 2 ',
-      },
+  {
+    game_name: 'Warcraft 1',
+  },
+  {
+    game_name: 'Warcraft 2 ',
+  },
   {
     game_name: 'Warcraft 3 Reign Of Chaos',
   },
