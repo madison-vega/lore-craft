@@ -2,12 +2,12 @@ const { Character } = require('../models');
 
 const characterData = [
   {
-    character_name: 'Sylvanus Windrunner',
+    character_name: 'Sylvanas Windrunner',
     age: 2800,
     first_appearance: 3,
     faction_char: 2,
     race: 1,
-    bio: 'none',
+    bio: 'Sylvanas Windrunner is a character from the Warcraft series, serving as the undead racial leader.',
   },
   {
     character_name: 'Prince Arthus Menethil',
@@ -15,7 +15,7 @@ const characterData = [
     first_appearance: 3,
     faction_char: 1,
     race: 1,
-    bio: 'none'
+    bio: 'Prince Arthas Menethil was an Alliance paladin in training under Uther the Lightbringer, he will later be known as the Lich King'
   },
   {
     character_name: 'Muradin Bronzebeard',
@@ -58,15 +58,15 @@ const characterData = [
     bio: 'none'
   },
   {
-    character_name: 'Durotan',
-    age: 29,
-    first_appearance: 5,
+    character_name: 'Grom Hellscream',
+    age: 46,
+    first_appearance: 2,
     faction_char: 2,
-    race: 14,
+    race: 13,
     bio: 'none'
   },
 ];
 
-const seedCharacters = () => Character.bulkCreate(CharacterData);
+const seedCharacters = () => Character.bulkCreate(characterData);
 
 module.exports = seedCharacters;

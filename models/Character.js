@@ -47,7 +47,7 @@ Character.init(
         model: 'faction',
         key: 'id',
       },
-    },
+    }
   },
   {
     sequelize,
