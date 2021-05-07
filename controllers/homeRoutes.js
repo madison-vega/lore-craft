@@ -20,3 +20,4 @@ router.get('/', cors(corsOptions), (req, res) => {
 
 
 module.exports = router;
+
