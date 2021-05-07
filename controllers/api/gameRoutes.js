@@ -5,7 +5,7 @@ const { Game, Character, Faction, Race, LinkTag } = require('../../models');
 router.get('/', async (req, res) => {
     console.log(req.body.game_name)
     try {
-        let allGames = await Game.findAll({
+        const allGames = await Game.findAll({
             include: Character,
             where: {
                 game_name: req.body.game_name
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        let oneGame = await Game.findOne({
+        const oneGame = await Game.findOne({
             where: {
                 id: req.params.id
             },
