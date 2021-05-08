@@ -17,7 +17,7 @@
 
     <link rel="favicon" href="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true">
     <link rel="stylesheet" href="https://raw.githubusercontent.com/madison-vega/lore-craft/main/public/css/styles.css">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
 
     <title>Document</title>
 
@@ -28,7 +28,7 @@
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#" style="">
+            <a class="navbar-item" href="/" style="">
 
                 <img src="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true"
                     height="150px" width="100px">
@@ -74,6 +74,7 @@
                     </div>
                 <div>
                     <input type="text" placeholder="Search.." id='search' style="margin-top: 15px; border-radius: 10px;">
+                    <a type="submit" class="button is-primary" id="search-submit" style="margin-top: 5px; border-radius: 10px; padding: 5px;">Submit</a>
                 </div>
                 </div>
 
@@ -89,7 +90,7 @@
                         </a>
                         <a class="button is-light" id="logIn" href="/login">
 
-                            Log in
+                            Login
                         </a>
                         <a class="button is-light" id="logOut" href="/logout">
                             Log Out
@@ -100,14 +101,16 @@
         </div>
     </nav>
     {{!-- End of Navbar --}}
-    <main>
+
         {{{body}}}
-    </main>
 
     <script src="/js/login.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="/javascripts/handlebars.min-latest.js"></script>
+    <script type="text/x-handlebars" id="lightbox-template"></script>
+    <script src="/js/search.js"></script>
 
 </body>
 
