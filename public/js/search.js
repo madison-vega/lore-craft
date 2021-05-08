@@ -3,7 +3,7 @@ const searchHandler = async (event) => {
     event.preventDefault();
 
     // Gather the data from the form elements on the page
-    const searchContent = document.querySelector('searchbox').value.trim();
+    const searchContent = document.querySelector('#search').value.trim();
     
 
     if (searchContent) {
