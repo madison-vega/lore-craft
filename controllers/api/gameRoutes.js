@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op } = require("sequelize");
 const { Game, Character, Faction, Race, LinkTag } = require('../../models');
 
 

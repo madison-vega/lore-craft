@@ -4,8 +4,6 @@ const searchHandler = async (event) => {
 
     // Gather the data from the form elements on the page
     const searchContent = document.querySelector('#search').value.trim();
-    
-
     if (searchContent) {
         const response = await fetch('/api/character/search', {
             method: 'POST',
