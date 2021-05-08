@@ -22,4 +22,4 @@ const searchHandler = async (event) => {
     }
 };
 
-document.querySelector('searchbutton').addEventListener('submit', searchHandler);
+document.querySelector('#search-submit').addEventListener('submit', searchHandler);

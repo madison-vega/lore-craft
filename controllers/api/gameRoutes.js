@@ -36,6 +36,25 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.post('/search', async (req, res) => {
+    console.log(req.body)
+    try {
+        const game = await Game.findAll({
+            where: {
+                game_name: {
+                    [Op.substring]: req.body.searchterm
+                },
+            }
+        });
+        console.log(game);
+        res.send(game);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err)
+    }
+});
+
 
 
 module.exports = router;
