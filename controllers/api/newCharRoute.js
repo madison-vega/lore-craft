@@ -33,4 +33,13 @@ router.delete('/', withAuth, async (req, res) => {
     }
 });
 
+router.get('/createCharacter', async (req, res) => {
+    try {
+        res.render("inputCharacter")
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+
 module.exports = router;
