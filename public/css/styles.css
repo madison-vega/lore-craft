@@ -8,8 +8,7 @@
     display: flex;
     flex-shrink: 0;
 }
-
-.navbar-item{
+ .navbar-item{
     min-height: 150px;
-}
+ }
 
