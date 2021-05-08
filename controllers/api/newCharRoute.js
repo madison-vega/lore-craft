@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth')
 const { NewCharacter } = require('../../models')
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const newChar = await NewCharacter.findAll();
         res.status(200).json(newChar)
@@ -9,7 +10,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const createChar = await NewCharacter.create(req.body);
         res.status(200).json(createChar);
@@ -18,7 +19,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/', async (req, res) => {
+router.delete('/', withAuth, async (req, res) => {
     try {
         const deleteChar = await NewCharacter.destroy({
             where: {
