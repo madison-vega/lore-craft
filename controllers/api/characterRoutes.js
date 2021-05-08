@@ -21,4 +21,14 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.post('/search', async (req, res) => {
+    console.log(req.body)
+    try {
+        res.status(200)
+        
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 module.exports = router;

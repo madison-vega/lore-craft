@@ -7,8 +7,8 @@ const searchHandler = async (event) => {
     
 
     if (searchContent) {
-        const response = await fetch('/api/character', {
-            method: 'GET',
+        const response = await fetch('/api/character/search', {
+            method: 'POST',
             body: JSON.stringify({ response: searchContent }),
             headers: { 'Content-Type': 'application/json' },
             
