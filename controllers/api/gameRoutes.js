@@ -56,7 +56,7 @@ router.post('/search', async (req, res) => {
     }
 });
 
-router.get('/gameStop', async (req, res) => {
+router.get('/allGames', async (req, res) => {
     try {
         res.render('game')
     } catch (err) {

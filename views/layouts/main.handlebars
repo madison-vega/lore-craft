@@ -16,8 +16,8 @@
         href="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true">
 
     <link rel="favicon" href="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/madison-vega/lore-craft/main/public/css/styles.css">
-    <link rel="stylesheet" href="../../public/css/styles.css">
+
+    <link rel="stylesheet" href="/css/styles.css">
 
     <title>Document</title>
 
@@ -44,7 +44,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" href="/">
                     Home
                 </a>
 
@@ -61,7 +61,7 @@
                         <a class="navbar-item">
                             Characters
                         </a>
-                        <a class="navbar-item" href="/api/game/gameStop">
+                        <a class="navbar-item" href="/api/game/allGames">
                             Games
                         </a>
                         <a class="navbar-item" href="/api/newCharacter/createCharacter">
@@ -71,11 +71,10 @@
                         <a class="navbar-item">
                             Report an issue
                         </a>
+
+
                     </div>
-                <div>
-                    <input type="text" placeholder="Search.." id='search' style="margin-top: 15px; border-radius: 10px;">
-                    <a type="submit" class="button is-primary" id="search-submit" style="margin-top: 5px; border-radius: 10px; padding: 5px;">Submit</a>
-                </div>
+
                 </div>
 
             </div>
@@ -85,13 +84,14 @@
 
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary" id="signUp">
-                            <strong>Sign up</strong>
+                        <a class="button is-primary" id="signup" href="/signup">
+                            <strong style="background-color: #f8b700;">Sign up</strong>
                         </a>
-                        <a class="button is-light" id="logIn" href="/login">
 
-                            Login
+                        <a class="button is-light" id="logIn" href="/login" >
+                            <strong style="background-color:#7a8646;">Login</strong>
                         </a>
+
                         <a class="button is-light" id="logOut" href="/logout">
                             Log Out
                         </a>
@@ -102,6 +102,7 @@
     </nav>
     {{!-- End of Navbar --}}
 
+    <br>
         {{{body}}}
 
     <script src="/js/login.js"></script>
