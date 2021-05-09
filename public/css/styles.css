@@ -11,7 +11,6 @@
     flex-shrink: 0;
 }
 
-
 .navbar-dropdown
 {
     color: #ded2b7;
@@ -39,7 +38,7 @@ color: #ded2b7;
 }
 
 
-#signUp{
+#signup{
 background-color: #f8b700;
 color: #211510;
 }
@@ -82,4 +81,22 @@ input{
     margin-left: 20px;
     border-radius: 20px;
     padding: 10px;
+}
+
+input:focus, #search:focus, input::selection {
+    border-radius: 20px;
+}
+
+#login-article {
+    margin: 100px;
+    margin-right: 200px;
+    align-content: center;
+    font-size: 40px;
+    padding: 10px;
+}
+
+#login-modal-button {
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 30px;
 }
