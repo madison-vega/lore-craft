@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op } = require("sequelize");
 const { Game, Character, Faction, Race, LinkTag } = require('../../models');
 
 
@@ -33,6 +34,25 @@ router.get('/:id', async (req, res) => {
         res.status(200).json(oneGame)
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.post('/search', async (req, res) => {
+    console.log(req.body)
+    try {
+        const game = await Game.findAll({
+            where: {
+                game_name: {
+                    [Op.substring]: req.body.searchterm
+                },
+            }
+        });
+        console.log(game);
+        res.send(game);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err)
     }
 });
 
