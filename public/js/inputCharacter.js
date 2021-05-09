@@ -1,21 +1,22 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-
-    const age = document.querySelector('input[name = "age"]').value;
-    const race = document.querySelector('input[name = "race"]').value;
-    const bio = document.querySelector('input[name = "bio"]').value;
+    const name = document.querySelector('#char_name').value;
+    const age = document.querySelector('#char_age').value;
+    const race = document.querySelector('char_race').value;
+    const bio = document.querySelector('char_bio"]').value;
 
     const response = await fetch('/api/newCharRoute', {
         method: 'POST',
         body: JSON.stringify({
+            name,
             age,
             race,
             bio
         }),
-        headers: 
+        headers:
             'Content-Type: application/json'
-    
+
     });
 
     if (response.of) {
@@ -24,4 +25,4 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('').addEventListener('submit', newFormHandler);
