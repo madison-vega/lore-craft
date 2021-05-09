@@ -14,15 +14,9 @@ async function newFormHandler(event) {
             race,
             bio
         }),
-<<<<<<< HEAD
-        headers: 
-            'Content-Type: application/json'
-    
-=======
         headers:
             'Content-Type: application/json'
 
->>>>>>> dbc4edfa2411a3fd8fb11d83687dfdb80a3caf74
     });
 
     if (response.of) {
@@ -31,8 +25,4 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
-<<<<<<< HEAD
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-=======
 document.querySelector('').addEventListener('submit', newFormHandler);
->>>>>>> dbc4edfa2411a3fd8fb11d83687dfdb80a3caf74
