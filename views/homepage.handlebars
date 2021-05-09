@@ -1,31 +1,30 @@
+{{!-- Beginning of main --}}
+<main>
+    <br>
+    <video class="VideoPane-video" id="video-background"
+        src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/o9/O9BFRQGMNF9Q1618767555513.mp4"
+        data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/o9/O9BFRQGMNF9Q1618767555513.mp4" loop="loop"
+        muted="muted" autoplay="autoplay" playsinline="playsinline"></video>
 
 
-
-    {{!-- Beginning of main --}}
-    <main>
-        <br>
-        <div class="columns is-mobile">
-            <div class="column is-three-fifths">
-                <div class="card" 
-                style="margin: 50px; padding:30px; border-radius:30px;">
-
-                    <article style="">
-                        <h4>Welcome to Lore-Craft!</h4>
-                        <p>This site is your guide to lore </p>
-                    </article>
-
-                </div>
-            </div>
-
-            <div >
-                {{!-- video goes here --}}
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/GofgDNxyph4" 
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                style="margin-top: 65px; border-radius:10px;"></iframe>
+    <div class="columns is-mobile">
+        <div class="column is-three-fifths">
+            <div class="card" style="margin: 50px; padding:30px; border-radius:25px;">
+                    <h1 style="font-size:45px;">Welcome to Lore-Craft!</h1>
+                    <p>This site is your guide to lore </p>
             </div>
         </div>
 
+        <div>
+            {{!-- video goes here --}}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GofgDNxyph4"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                style="margin-top: 65px; border-radius:10px;"></iframe>
+        </div>
+    </div>
 
-    </main>
-    {{!-- Ending of main --}}
+
+
+</main>
+{{!-- Ending of main --}}

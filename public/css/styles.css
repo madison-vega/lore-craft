@@ -1,15 +1,102 @@
 *{
     font-family: 'MedievalSharp', cursive;
-    background-color: rgba(106, 142, 35, 0.76);
+    background-color: #21140f;
+    color: #ded2b7;
 }
 
 .navbar-brand, .navbar-tabs {
     align-items: stretch;
+    color: #ded2b7;
     display: flex;
     flex-shrink: 0;
 }
 
-.navbar-item{
-    min-height: 150px;
+.navbar-dropdown
+{
+    color: #ded2b7;
+    font-weight: bold;
 }
 
+.navbar-item{
+    min-height: 100px;
+    color: #ded2b7;
+    font-weight: bold;
+}
+#video-background{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+nav{
+    color:#ded2b7;
+}
+.card{
+background-color: #21140f;
+color: #ded2b7;
+}
+
+
+#signup{
+background-color: #f8b700;
+color: #211510;
+}
+#logIn{
+    background-color: #7a8646;
+    color:#ded2b7;
+    -webkit-text-stroke: 0.3px;
+}
+#logOut{
+    background-color: #f87000;
+    color: #211510;
+}
+
+#website-header{
+    border-radius: 8px;
+}
+
+
+button{
+    border-radius: 5px;
+}
+#search-submit{
+    background-color:#ded2b7;
+    -webkit-text-stroke: 0.3px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+#search{
+    margin-top: 30px; 
+    border-radius: 20px;
+}
+
+input{
+    /* margin-left: 5px; */
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+input:focus, #search:focus, input::selection {
+    border-radius: 20px;
+}
+
+#login-article {
+    margin: 100px;
+    margin-right: 200px;
+    align-content: center;
+    font-size: 40px;
+    padding: 10px;
+}
+
+#login-modal-button {
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 30px;
+}
