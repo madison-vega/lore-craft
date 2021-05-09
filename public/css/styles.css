@@ -82,3 +82,10 @@ input{
     border-radius: 20px;
     padding: 10px;
 }
+
+input:focus, input::selection {
+    border-radius: 20px;
+}
+#search:focus{
+    border-radius: 20px;
+}
