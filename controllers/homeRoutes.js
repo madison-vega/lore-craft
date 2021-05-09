@@ -32,7 +32,7 @@ router.get('/logout', (req, res) => {
     
   } else {
     res.redirect('/login');
-    
+    res.status(404).json({ message: 'No user found with this id.' });
   }
 
 });
