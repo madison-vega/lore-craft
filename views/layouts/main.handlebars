@@ -10,14 +10,16 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    {{!--
-    <link rel="shortcut icon" type="image/gif" href="../../lorecraft-logo.png"> --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/gif"
         href="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true">
 
     <link rel="favicon" href="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/madison-vega/lore-craft/main/public/css/styles.css">
-    <link rel="stylesheet" href="../../public/css/styles.css">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
 
     <title>Document</title>
 
@@ -30,7 +32,8 @@
         <div class="navbar-brand">
             <a class="navbar-item" href="/" style="">
 
-                <img src="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true"
+                <img id="website-header"
+                    src="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true"
                     height="150px" width="100px">
             </a>
 
@@ -53,7 +56,7 @@
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
+                    <a class="navbar-link" style="color:#ded2b7">
                         More
                     </a>
 
@@ -71,13 +74,23 @@
                         <a class="navbar-item">
                             Report an issue
                         </a>
+
+
+                    </div>
                     </div>
                 <div>
                     <input type="text" placeholder="Search.." id='search' style="margin-top: 15px; border-radius: 10px;">
                     <a type="submit" class="button is-primary" id="search-submit" style="margin-top: 5px; border-radius: 10px; padding: 5px;">Submit</a>
                 </div>
-                </div>
+               
 
+
+                </div>
+                    <div>
+                        <input type="text" placeholder="Search.." id='search'>
+                        <a type="submit" class="button" id="search-submit">Submit</a>
+                        </input>
+                    </div>
             </div>
 
 
@@ -85,15 +98,16 @@
 
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary" id="signUp">
-                            <strong>Sign up</strong>
+                        <a class="button is-primary" id="signUp" >
+                            <strong style="background-color: #f8b700;">Sign up</strong>
                         </a>
-                        <a class="button is-light" id="logIn" href="/login">
+                        <a class="button is-light" id="logIn" href="/login" >
 
-                            Login
+                            <strong style="background-color:#7a8646;">Login</strong>
+
                         </a>
                         <a class="button is-light" id="logOut" href="/logout">
-                            Log Out
+                            <strong style="background-color: #f87000;">Log Out</strong>
                         </a>
                     </div>
                 </div>
@@ -102,15 +116,19 @@
     </nav>
     {{!-- End of Navbar --}}
 
+
         {{{body}}}
+
 
     <script src="/js/login.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <script src="/javascripts/handlebars.min-latest.js"></script>
     <script type="text/x-handlebars" id="lightbox-template"></script>
     <script src="/js/search.js"></script>
+
 
 </body>
 
