@@ -4,20 +4,28 @@ const searchHandler = async (event) => {
 
     // Gather the data from the form elements on the page
     const searchContent = document.querySelector('#search').value.trim();
+    // search characters
     if (searchContent) {
-        const response = await fetch('/api/character/search', {
+        const responseChar = await fetch('/api/character/search', {
             method: 'POST',
             body: JSON.stringify({ response: searchContent }),
             headers: { 'Content-Type': 'application/json' },
             
         });
 
-        if (response.ok) {
+        if (responseChar.ok) {
             document.location.replace('/');
         } else {
             alert('No results matching search criteria.');
         }
     }
+    // search Games
+
+
+
+
+
+
 };
 
 document.querySelector('#search-submit').addEventListener('submit', searchHandler);
