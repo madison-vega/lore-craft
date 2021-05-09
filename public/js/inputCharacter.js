@@ -25,4 +25,4 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
-document.querySelector('').addEventListener('submit', newFormHandler);
+document.querySelector('submit-new-character').addEventListener('submit', newFormHandler);

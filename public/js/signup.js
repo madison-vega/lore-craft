@@ -1,4 +1,4 @@
-const signup = async (event) => {
+const signupFormHandler = async (event) => {
 
     event.preventDefault();
     // Make a POST request to destroy the session on the back end
@@ -18,5 +18,5 @@ const signup = async (event) => {
 
 
 if (document.location == '/signup') {
-    document.querySelector('#signUp').addEventListener('click', signup);
+    document.querySelector('#signUp').addEventListener('click', signupFormHandler);
 };
