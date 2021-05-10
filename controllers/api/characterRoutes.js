@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Op } = require("sequelize");
+
 const { Character, Faction, Game, Race } = require('../../models')
 
 router.get('/', async (req, res) => {

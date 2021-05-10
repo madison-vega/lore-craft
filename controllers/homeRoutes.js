@@ -4,6 +4,7 @@ const { Character, Game, Faction, Race, LinkTag, User } = require('../models');
 var express = require('express');
 var cors = require('cors');
 var app = express();
+const { Op } = require("sequelize");
 
 app.use(cors);
 
@@ -46,8 +47,8 @@ router.get('/signup', (req, res) => {
 
 });
 
-router.get('/search', async (req, res) => {
-  console.log(req.body)
+router.get('/search:', async (req, res) => {
+  console.log(req.query)
   try {
       const characterData = await Character.findAll({
           where: {
@@ -56,9 +57,7 @@ router.get('/search', async (req, res) => {
               },
           }
       });
-      const characters = characterData.map((character) => character.get({ plain: true }))
-      console.log(character);
-      res.render('searchResults', { characters: characters });
+      res.render('searchResults', { characters: characterData });
 
   } catch (err) {
       console.error(err);
