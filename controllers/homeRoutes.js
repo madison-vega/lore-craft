@@ -4,6 +4,9 @@ const { Character, Game, Faction, Race, LinkTag, User } = require('../models');
 var express = require('express');
 var cors = require('cors');
 var app = express();
+const wAuth = require('../utils/auth')
+
+
 
 app.use(cors);
 
@@ -18,7 +21,7 @@ router.get('/', cors(corsOptions), (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/newCharacter');
+    res.redirect('/createCharacter');
     return;
   } else {
     res.render('login');
@@ -28,7 +31,7 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('/logout');
+    res.render('logout');
     return;
   } else {
     res.redirect('/login');
@@ -41,11 +44,32 @@ router.get('/signup', (req, res) => {
     res.redirect('/logout');
     return;
   } else {
-    res.redirect('/signup');
+    res.render('signup');
   }
 
 });
 
+router.get('/createCharacter', wAuth, (req, res) => {
+  try {
+      res.render("inputCharacter")
+  } catch (err) {
+      res.status(500).json(err);
+  }
+})
+router.get('/games', wAuth, (req, res) => {
+  try {
+      res.render("game")
+  } catch (err) {
+      res.status(500).json(err);
+  }
+})
+router.get('/characters', wAuth, (req, res) => {
+  try {
+      res.render("character")
+  } catch (err) {
+      res.status(500).json(err);
+  }
+})
 
 
 

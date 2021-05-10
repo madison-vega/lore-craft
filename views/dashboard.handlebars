@@ -1,8 +1,11 @@
 
-<article class="games">
 
-    {{#each games as |game| }}
-        {{> game-info game}}
+{{#if games.length}}
+<section>
+  <h2>Game list</h2>
+    {{#each games as |game|}}
+      {{> dashboard-postinfo post}}
     {{/each}}
 
-</article>
+</section>
+{{/if}}

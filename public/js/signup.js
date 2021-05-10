@@ -1,9 +1,14 @@
 const signup = async (event) => {
-
+console.log('sign up event handler hit');
     event.preventDefault();
+
+    const email = document.querySelector('#email').value.trim();
+    const password = document.querySelector('#password').value.trim();
+
     // Make a POST request to destroy the session on the back end
-    const response = await fetch('/signup', {
+    const response = await fetch('/api/user/signup', {
         method: 'POST',
+        body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
     });
 
@@ -17,6 +22,7 @@ const signup = async (event) => {
 
 
 
-if (document.location == '/signup') {
-    document.querySelector('#signUp').addEventListener('click', signup);
-};
+// if (document.location == '/signup') {
+    console.log('SIGN Up location hit');
+    document.querySelector('#sign-up').addEventListener('submit', signup);
+// };
