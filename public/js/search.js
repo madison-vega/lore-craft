@@ -35,7 +35,5 @@ const searchHandler = async (event) => {
 
 document.querySelector('#search-submit').addEventListener('click', searchHandler);
 
-// fetch('http://example.com/movies.json')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
+
 
