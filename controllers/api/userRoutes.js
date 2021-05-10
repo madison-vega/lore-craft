@@ -4,12 +4,13 @@ const wAuth = require('../../utils/auth');
 const { route } = require('./gameRoutes');
 
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    console.log(req.body)
+    const userData = await User.create({email: req.body.email, username: req.body.email, password: req.body.password});
     req.session.save(() => {
       req.session.userId = userData.id;
-      req.session.username = userData.username;
+      req.session.email = userData.email;
       req.session.loggedIn = true;
 
       res.status(200).json(userData);
@@ -22,12 +23,12 @@ router.post('/', async (req, res) => {
 
 });
 
-
+// will post to /user/login
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
-        username: req.body.username,
+        email: req.body.email,
       }
     });
 
@@ -45,7 +46,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.userId = userData.id;
-      req.session.username = userData.username;
+      req.session.email = userData.email;
       req.session.loggedIn = true;
       res.json({ user: userData, message: 'Successful log in!' })
     });
@@ -67,17 +68,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).json({ user: userData, message: 'Please login' });
-    res.end();
 
-  }
-});
 
 
 router.delete('/:id', wAuth, async (req, res) => {

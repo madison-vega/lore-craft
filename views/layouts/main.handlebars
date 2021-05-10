@@ -58,14 +58,15 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/api/character/gameCharacter">
+                        <a class="navbar-item" href="/characters">
                             Characters
                         </a>
-                        <a class="navbar-item" href="/api/game/games">
+                        <a class="navbar-item" href="/games">
+                        {{!-- href="/api/game/games" --}}
                             Games
                         </a>
-                        <a class="navbar-item" href="/api/newCharacter/createCharacter">
-                            Newly created
+                        <a class="navbar-item" href="/createCharacter">
+                            Create a character
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item">
@@ -106,12 +107,13 @@
         {{{body}}}
 
     <script src="/js/login.js"></script>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="/javascripts/handlebars.min-latest.js"></script>
+    {{!-- <script src="/javascripts/handlebars.min-latest.js"></script> --}}
     <script type="text/x-handlebars" id="lightbox-template"></script>
-    <script src="/js/search.js"></script>
+    {{!-- <script src="/js/search.js"></script> --}}
 
 </body>
 
