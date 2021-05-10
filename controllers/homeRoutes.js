@@ -31,21 +31,12 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
-<<<<<<< HEAD
-    res.render('/logout');
-<<<<<<< HEAD
-    
-  } else {
+    req.session.destroy();
+    res.render('/logout');  
+  }
+  
+  else {
     res.redirect('/login');
-    res.status(404).json({ message: 'No user found with this id.' });
-=======
-=======
-    res.render('logout');
->>>>>>> main
-    return;
-  } else {
-    res.redirect('/login');
->>>>>>> main
   }
 
 });
@@ -53,18 +44,10 @@ router.get('/logout', (req, res) => {
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/logout');
-    return;
+
   } else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    res.render('/signup');
-    return;
-=======
     res.redirect('/signup');
->>>>>>> main
-=======
     res.render('signup');
->>>>>>> main
   }
 
 });
