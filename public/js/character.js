@@ -4,6 +4,8 @@ async function newFormHandler(event) {
     const name = document.querySelector('#char_name').value;
     const age = document.querySelector('#char_age').value;
     const race = document.querySelector('char_race').value;
+    const first_appearance = document.querySelector('char_race').value;
+    const faction_char = document.querySelector('char_bio"]').value;
     const bio = document.querySelector('char_bio"]').value;
 
     const response = await fetch('/api/newCharRoute', {
@@ -12,6 +14,8 @@ async function newFormHandler(event) {
             name,
             age,
             race,
+            first_appearance,
+            faction_char,
             bio
         }),
         headers:
@@ -25,4 +29,4 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
-document.querySelector('').addEventListener('submit', newFormHandler);
+document.querySelector('').addEventListener('', newFormHandler);
