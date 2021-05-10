@@ -25,4 +25,12 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+document.querySelector('submit-new-character').addEventListener('submit', newFormHandler);
+=======
+document.querySelector('').addEventListener('submit', newFormHandler);
+>>>>>>> main
+=======
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+>>>>>>> main

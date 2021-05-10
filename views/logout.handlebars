@@ -1,29 +1,41 @@
-<div class='card'>
-    <h4>Thanks for visiting!</h4>
-    <button><a href="/views/login.handlebars"> click here to return to login</a></button>
+<main>
+
+    <h2>Logout</h2>
+    <div>
+        <video id="video-background"
+        src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/en-us/production/en-us/static/hero-mobile-06c76b9c9b7a5f6acacbfd321c5b0f10.mp4"
+        loop="loop" muted="muted" autoplay="autoplay" playsinline="playsinline"></video>
     </div>
-<div class="modal">
-    <div class="modal-background">
-    <div class="modal-card">
-
-        <header class="modal-card-head">
-            <p class="modal-card-title">Success!</p>
-            <button class="delete" aria-label="close"></button>
-        </header>
+    <div class='card'>
+        <h4>Thanks for visiting!</h4>
+        <button><a href="/views/login.handlebars"> click here to return to login</a></button>
+    </div>
 
 
-        <section class="modal-card-body">
-            {{!-- content --}}
-            You have logged out successfully!
+    <div class="modal">
+        <div class="modal-background">
+            <div class="modal-card">
 
-        </section>
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Success!</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
 
-        <footer class="modal-card-foot">
-            <button class="button">Close</button>
-        </footer>
+
+                <section class="modal-card-body">
+                    {{!-- content --}}
+                    You have logged out successfully!
+
+                </section>
+
+                <footer class="modal-card-foot">
+                    <button class="button">Close</button>
+                </footer>
+
+            </div>
+        </div>
 
     </div>
-</div>
+</main>
 
-</div>
 <script src="/js/logout.js"></script>

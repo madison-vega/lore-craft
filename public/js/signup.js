@@ -22,7 +22,13 @@ console.log('sign up event handler hit');
 
 
 
+<<<<<<< HEAD
+if (document.location == '/signup') {
+    document.querySelector('#signUp').addEventListener('submit', signup);
+};
+=======
 // if (document.location == '/signup') {
     console.log('SIGN Up location hit');
     document.querySelector('#sign-up').addEventListener('submit', signup);
 // };
+>>>>>>> main
