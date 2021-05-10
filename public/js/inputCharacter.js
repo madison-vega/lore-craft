@@ -3,8 +3,8 @@ async function newFormHandler(event) {
 
     const name = document.querySelector('#char_name').value;
     const age = document.querySelector('#char_age').value;
-    const race = document.querySelector('char_race').value;
-    const bio = document.querySelector('char_bio"]').value;
+    const race = document.querySelector('#char_race').value;
+    const bio = document.querySelector('#char_bio').value;
 
     const response = await fetch('/api/newCharRoute', {
         method: 'POST',
