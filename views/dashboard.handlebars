@@ -1,0 +1,11 @@
+
+
+{{#if games.length}}
+<section>
+  <h2>Game list</h2>
+    {{#each games as |game|}}
+      {{> dashboard-postinfo post}}
+    {{/each}}
+
+</section>
+{{/if}}
