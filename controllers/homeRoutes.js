@@ -46,6 +46,26 @@ router.get('/signup', (req, res) => {
 
 });
 
+router.get('/search', async (req, res) => {
+  console.log(req.body)
+  try {
+      const characterData = await Character.findAll({
+          where: {
+              character_name: {
+                  [Op.substring]: req.body.searchContent
+              },
+          }
+      });
+      const characters = characterData.map((character) => character.get({ plain: true }))
+      console.log(character);
+      res.render('searchResults', { characters: characters });
+
+  } catch (err) {
+      console.error(err);
+      res.status(500).json(err)
+  }
+});
+
 
 
 
