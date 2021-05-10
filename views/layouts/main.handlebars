@@ -8,9 +8,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-
     <link rel="icon" type="image/gif"
         href="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true">
 
@@ -18,7 +15,7 @@
 
     <link rel="stylesheet" href="/css/styles.css">
 
-    <title>Document</title>
+    <title>LoreCraft</title>
 
 </head>
 
@@ -29,8 +26,7 @@
         <div class="navbar-brand">
             <a class="navbar-item" href="/" style="">
 
-                <img id="website-header"
-                    src="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true"
+                <img src="https://github.com/madison-vega/lore-craft/blob/main/lorecraft-logo.png?raw=true"
                     height="150px" width="100px">
             </a>
 
@@ -53,15 +49,15 @@
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" style="color:#ded2b7">
+                    <a class="navbar-link">
                         More
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="/api/character/gameCharacter">
                             Characters
                         </a>
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="/api/game/games">
                             Games
                         </a>
                         <a class="navbar-item" href="/api/newCharacter/createCharacter">
@@ -76,11 +72,7 @@
                     </div>
 
                 </div>
-                    <div>
-                        <input type="text" placeholder="Search.." id='search'>
-                        <a type="submit" class="button" id="search-submit">Submit</a>
-                        </input>
-                    </div>
+
             </div>
 
 
@@ -92,12 +84,12 @@
                             <strong style="background-color: #f8b700;">Sign up</strong>
                         </a>
 
-                        <a class="button is-light" id="logIn" href="/login" >
+                        <a class="button is-light" id="logIn" href="/login">
                             <strong style="background-color:#7a8646;">Login</strong>
                         </a>
 
                         <a class="button is-light" id="logOut" href="/logout">
-                            <strong style="background-color: #f87000;">Log Out</strong>
+                            Log Out
                         </a>
                     </div>
                 </div>
@@ -107,17 +99,13 @@
     {{!-- End of Navbar --}}
 
     <br>
-        {{{body}}}
+    {{{body}}}
 
-
-    <script src="/js/login.js"></script>
-    <script src="/js/logout.js"></script>
-    <script src="/js/signup.js"></script>
-    <script src="/js/search.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
+    <script src="/javascripts/handlebars.min-latest.js"></script>
+    <script type="text/x-handlebars" id="lightbox-template"></script>
 
 </body>
 

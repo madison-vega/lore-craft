@@ -29,10 +29,16 @@ router.get('/login', (req, res) => {
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     res.render('/logout');
+<<<<<<< HEAD
     
   } else {
     res.redirect('/login');
     res.status(404).json({ message: 'No user found with this id.' });
+=======
+    return;
+  } else {
+    res.redirect('/login');
+>>>>>>> main
   }
 
 });
@@ -42,8 +48,12 @@ router.get('/signup', (req, res) => {
     res.redirect('/logout');
     return;
   } else {
+<<<<<<< HEAD
     res.render('/signup');
     return;
+=======
+    res.redirect('/signup');
+>>>>>>> main
   }
 
 });
