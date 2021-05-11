@@ -4,9 +4,13 @@ const { Character, Game, Faction, Race, LinkTag, User } = require('../models');
 var express = require('express');
 var cors = require('cors');
 var app = express();
+<<<<<<< HEAD
+const { Op } = require("sequelize");
+=======
 const wAuth = require('../utils/auth')
 
 
+>>>>>>> main
 
 app.use(cors);
 
@@ -52,27 +56,32 @@ router.get('/signup', (req, res) => {
 
 });
 
-router.get('/createCharacter', wAuth, (req, res) => {
+router.get('/search', async (req, res) => {
+  console.log(req.query.searchTerm)
   try {
-    res.render("inputCharacter")
+    const characterData = await Character.findAll({
+      
+      where: {
+        character_name: {
+          [Op.substring]: req.query.searchTerm
+        },
+      },
+      raw: true,
+      nest: true
+    });
+    
+    
+    const character = characterData[0]
+    res.render('searchResults', character);
+    console.log(characterData)
+    console.log(character);
+
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json(err)
   }
-})
-router.get('/games', wAuth, (req, res) => {
-  try {
-    res.render("game")
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-router.get('/characters', wAuth, (req, res) => {
-  try {
-    res.render("character")
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
+});
+
 
 
 
