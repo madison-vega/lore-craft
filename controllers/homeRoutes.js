@@ -41,10 +41,10 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  try{
-    res.render('/signup');
-  } catch (err) {
-      res.status(500).json(err);
+  if (req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+    res.render('login');
   }
 
 
@@ -52,23 +52,23 @@ router.get('/signup', (req, res) => {
 
 router.get('/createCharacter', wAuth, (req, res) => {
   try {
-      res.render("inputCharacter")
+    res.render("inputCharacter")
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 })
 router.get('/games', wAuth, (req, res) => {
   try {
-      res.render("game")
+    res.render("game")
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 })
 router.get('/characters', wAuth, (req, res) => {
   try {
-      res.render("character")
+    res.render("character")
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 })
 
