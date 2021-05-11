@@ -32,22 +32,25 @@ router.get('/login', (req, res) => {
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy();
+
     res.render('/logout');
   }
 
   else {
     res.render('logout');
+
   }
 
 });
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/logout');
-    res.render('logout');
+    res.redirect('/signup');
+
 
   } else {
-    res.render('logout');
+    res.redirect('/signup');
+    res.render('signup');
   }
 
 });
