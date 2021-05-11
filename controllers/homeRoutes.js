@@ -46,6 +46,7 @@ router.get('/signup', (req, res) => {
   } 
   catch {
     res.status(500).json(err);
+
   }
 
 
