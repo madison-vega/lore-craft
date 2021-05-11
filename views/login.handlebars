@@ -10,7 +10,22 @@
         <div class="card">
             <div class="card-content">
                 Sign-in:
-                <button id="login-modal-button">Here!</button>
+                <form class="login-form">
+    <div>
+      <label for="email">Email</label>
+      <input class="input" type="text" id="email" name="email" placeholder="Email" />
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input class="input" type="password" id="password" name="password" placeholder="Password" />
+    </div>
+
+  
+    <br>
+    <button id="login-modal-button">Login</button>
+  </form>
+                
             </div>
         </div>
     </article>
@@ -31,3 +46,5 @@
     </div>
 
 </div>
+
+<script src="/js/login.js"></script> 

@@ -4,7 +4,13 @@ const { Character, Game, Faction, Race, LinkTag, User } = require('../models');
 var express = require('express');
 var cors = require('cors');
 var app = express();
+<<<<<<< HEAD
 const { Op } = require("sequelize");
+=======
+const wAuth = require('../utils/auth')
+
+
+>>>>>>> main
 
 app.use(cors);
 
@@ -19,8 +25,7 @@ router.get('/', cors(corsOptions), (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/newCharacter');
-    return;
+    res.redirect('/login');
   } else {
     res.render('login');
   }
@@ -29,21 +34,23 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
+    req.session.destroy();
     res.render('/logout');
-    return;
-  } else {
-    res.redirect('/login');
+  }
+
+  else {
+    res.render('logout');
   }
 
 });
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/logout');
-    return;
+    res.redirect('/login');
   } else {
-    res.redirect('/signup');
+    res.render('login');
   }
+
 
 });
 
