@@ -61,6 +61,7 @@ router.get('/search', async (req, res) => {
       nest: true
     });
     
+    
     const character = characterData[0]
     res.render('searchResults', character);
     console.log(characterData)
