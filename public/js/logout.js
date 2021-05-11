@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const logoutFormHandler = async (event) => {
-=======
 const logout = async (event) => {
->>>>>>> main
 
     event.preventDefault();
 
@@ -21,10 +17,6 @@ const logout = async (event) => {
 };
 
 if (document.location == '/logout') {
-<<<<<<< HEAD
-    document.querySelector('#logOut').addEventListener('click', logoutFormHandler);
-=======
     document.querySelector('#logOut').addEventListener('click', logout);
->>>>>>> main
 };
 

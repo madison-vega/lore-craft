@@ -22,7 +22,6 @@ router.get('/', cors(corsOptions), (req, res) => {
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/login');
-    return;
   } else {
     res.render('login');
   }
@@ -42,13 +41,14 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy();
+  try{
     res.render('/signup');
-
-  } else {
-    res.render('signup');
   }
+
+  } catch (err) {
+      res.status(500).json(err);
+  }
+
 
 });
 
