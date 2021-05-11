@@ -47,21 +47,28 @@ router.get('/signup', (req, res) => {
 
 });
 
-router.get('/search:', async (req, res) => {
-  console.log(req.query)
+router.get('/search', async (req, res) => {
+  console.log(req.query.searchTerm)
   try {
-      const characterData = await Character.findAll({
-          where: {
-              character_name: {
-                  [Op.substring]: req.body.searchContent
-              },
-          }
-      });
-      res.render('searchResults', { characters: characterData });
+    const characterData = await Character.findAll({
+      
+      where: {
+        character_name: {
+          [Op.substring]: req.query.searchTerm
+        },
+      },
+      raw: true,
+      nest: true
+    });
+    
+    const character = characterData[0]
+    res.render('searchResults', character);
+    console.log(characterData)
+    console.log(character);
 
   } catch (err) {
-      console.error(err);
-      res.status(500).json(err)
+    console.error(err);
+    res.status(500).json(err)
   }
 });
 
