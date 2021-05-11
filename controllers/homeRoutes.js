@@ -44,10 +44,10 @@ router.get('/logout', (req, res) => {
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/logout');
-    res.render('logout');
 
   } else {
-    res.render('logout');
+    res.redirect('/signup');
+    res.render('signup');
   }
 
 });
