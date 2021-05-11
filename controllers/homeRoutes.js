@@ -43,10 +43,10 @@ router.get('/logout', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/logout');
+    req.session.destroy();
+    res.render('/signup');
 
   } else {
-    res.redirect('/signup');
     res.render('signup');
   }
 
