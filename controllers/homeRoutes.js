@@ -21,8 +21,7 @@ router.get('/', cors(corsOptions), (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/createCharacter');
-    return;
+    res.redirect('/login');
   } else {
     res.render('login');
   }
@@ -32,23 +31,22 @@ router.get('/login', (req, res) => {
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy();
-    res.render('/logout');  
+    res.render('/logout');
   }
-  
+
   else {
-    res.redirect('/login');
+    res.render('logout');
   }
 
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/logout');
-
-  } else {
-    res.redirect('/signup');
-    res.render('signup');
+  try{
+    res.render('/signup');
+  } catch (err) {
+      res.status(500).json(err);
   }
+
 
 });
 
