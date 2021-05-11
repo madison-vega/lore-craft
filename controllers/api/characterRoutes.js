@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Op } = require("sequelize");
+
 const { Character, Faction, Game, Race } = require('../../models')
 
 router.get('/', async (req, res) => {
@@ -23,24 +23,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.get('/search', async (req, res) => {
-    console.log(req.body)
-    try {
-        const character = await Character.findAll({
-            where: {
-                character_name: {
-                    [Op.substring]: req.body.searchContent
-                },
-            }
-        });
-        console.log(character);
-        res.render('searchResults', { character: character });
 
-    } catch (err) {
-        console.error(err);
-        res.status(500).json(err)
-    }
-});
 
 
 router.get('/gameCharacter', async (req, res) => {
