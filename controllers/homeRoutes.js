@@ -4,13 +4,9 @@ const { Character, Game, Faction, Race, LinkTag, User } = require('../models');
 var express = require('express');
 var cors = require('cors');
 var app = express();
-<<<<<<< HEAD
-const { Op } = require("sequelize");
-=======
 const wAuth = require('../utils/auth')
 
 
->>>>>>> main
 
 app.use(cors);
 
