@@ -41,10 +41,11 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    res.render('login');
+  try{
+    res.render('signup');
+  } 
+  catch {
+    res.status(500).json(err);
   }
 
 

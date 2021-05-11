@@ -140,8 +140,8 @@
 // --------------------------------------------------
 
 const router = require('express').Router();
-const wAuth = require('../../utils/auth')
-const { NewCharacter } = require('../../models')
+const wAuth = require('../../utils/auth');
+const { NewCharacter } = require('../../models');
 
 router.get('/', wAuth, async (req, res) => {
     try {
@@ -168,7 +168,7 @@ router.delete('/', wAuth, async (req, res) => {
             }
 
         })
-        res.status(200).json(deleteChar)
+        res.status(200).json(deleteChar);
     } catch (err) {
         res.status(500).json(err);
     }
