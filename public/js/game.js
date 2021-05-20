@@ -19,4 +19,4 @@ if (response.of) {
     alert(response.statusText);
 }
 
-document.querySelector('').addEventListener('submit', newFormHandler)
+document.querySelector('').addEventListener('submit', newFormHandler);
