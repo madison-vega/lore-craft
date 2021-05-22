@@ -1,7 +1,7 @@
 async function signupFormHandler (event) {
     
+    event.preventDefault();
     console.log('signupFormHandler was called');
-
 
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
@@ -19,11 +19,8 @@ async function signupFormHandler (event) {
     } catch (error) {
         alert(response.statusText);
         console.log(error);
-
     }
     
-    event.preventDefault();
-
 }
 
 
