@@ -34,5 +34,3 @@ if (window.location.href.indexOf('/signup') > 0) {
     console.log("compare of location of window working!");
 }
 
-
-
