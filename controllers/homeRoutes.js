@@ -67,6 +67,7 @@ router.get('/test', (req, res) => {
 // });
 
 router.get('/character', (req, res) => {
+
   res.render('character');
 });
 
