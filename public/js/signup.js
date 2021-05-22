@@ -9,13 +9,15 @@ async function signupFormHandler (event) {
     // Make a POST request to destroy the session on the back end
     try {
         console.log('POSTing to dom');
+
         await fetch('api/user/signup', {
+
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-        window.location = 'login';
 
+        window.location = '/login';
 
     } catch (error) {
         alert(response.statusText);

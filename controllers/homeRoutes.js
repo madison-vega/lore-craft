@@ -22,6 +22,7 @@ router.get('/', cors(corsOptions), (req, res) => {
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
+    res.status(400).json({ message: 'You are Already logged in!' });
   } else {
     res.render('login');
   }
@@ -41,17 +42,34 @@ router.get('/logout', (req, res) => {
 
 });
 
-router.get('/signup', (req, res) => {
-  try{
-    res.render('signup');
-  } 
-  catch {
-    res.status(500).json(err);
-
-  }
-
-
+router.get('/signup', (req, res) =>{
+  res.render('signup');
 });
+
+router.post('/test', (req, res) =>{
+  
+  console.log(req.body);
+  
+});
+
+router.get('/test', (req, res) =>{
+  
+  res.render('test');
+});
+
+// router.post('/api/signup', (req, res) => {
+//   console.log(req.body);
+//   try{
+//     User.create(req.body);
+//     res.status(200).redirect('/login');
+//   } 
+//   catch {
+//     res.status(500).json(err);
+
+//   }
+
+
+// });
 
 router.get('/search', async (req, res) => {
   console.log(req.query.searchTerm)
