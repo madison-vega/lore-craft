@@ -1,30 +1,35 @@
-const signup = async (event) => {
-console.log('sign up event handler hit');
-    event.preventDefault();
+async function signupFormHandler (event) {
+    
+    console.log('signupFormHandler was called');
+
 
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
 
     // Make a POST request to destroy the session on the back end
-    const response = await fetch('/api/user/signup', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
-    });
+    try {
+        console.log('POSTing to dom');
+        const response = await fetch('/signup', {
+            method: 'POST',
+            body: JSON.stringify({ email, password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-    if (response.ok) {
-        // If successfully logged out, redirect to the login page
-        document.location.replace('/signup');
-    } else {
+
+    } catch (error) {
         alert(response.statusText);
+        console.log(error);
+
     }
-};
+    
+    event.preventDefault();
+
+}
 
 
+if (window.location.href.indexOf('/signup') > 0) {
 
-
-if (document.location == '/signup') {
-    console.log('SIGN Up location hit');
-    document.querySelector('#sign-up').addEventListener('submit', signup);
-};
+    document.querySelector('#sign-up').addEventListener('submit', signupFormHandler);
+    console.log("compare of location of window working!");
+}
 
