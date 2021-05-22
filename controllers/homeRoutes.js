@@ -66,6 +66,11 @@ router.get('/test', (req, res) => {
 
 // });
 
+router.get('/inputCharacter', (req, res) => {
+
+  res.render('inputCharacter');
+});
+
 router.get('/character', (req, res) => {
 
   res.render('character');
