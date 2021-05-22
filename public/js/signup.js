@@ -14,6 +14,7 @@ async function signupFormHandler (event) {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
+        window.location = '/login';
 
 
     } catch (error) {
