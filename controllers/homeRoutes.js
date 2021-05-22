@@ -71,6 +71,11 @@ router.get('/character', (req, res) => {
   res.render('character');
 });
 
+router.get('/game', (req, res) => {
+
+  res.render('game');
+});
+
 
 router.get('/search', async (req, res) => {
   console.log(req.query.searchTerm)
