@@ -42,18 +42,13 @@ router.get('/logout', (req, res) => {
 
 });
 
-router.get('/signup', (req, res) =>{
+router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.post('/test', (req, res) =>{
-  
-  console.log(req.body);
-  
-});
 
-router.get('/test', (req, res) =>{
-  
+router.get('/test', (req, res) => {
+
   res.render('test');
 });
 
@@ -71,11 +66,17 @@ router.get('/test', (req, res) =>{
 
 // });
 
+router.get('/character', (req, res) => {
+
+  res.render('character');
+});
+
+
 router.get('/search', async (req, res) => {
   console.log(req.query.searchTerm)
   try {
     const characterData = await Character.findAll({
-      
+
       where: {
         character_name: {
           [Op.substring]: req.query.searchTerm
@@ -84,8 +85,8 @@ router.get('/search', async (req, res) => {
       raw: true,
       nest: true
     });
-    
-    
+
+
     const character = characterData[0]
     res.render('searchResults', character);
     console.log(characterData)
