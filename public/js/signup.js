@@ -1,7 +1,7 @@
 async function signupFormHandler (event) {
     
+    event.preventDefault();
     console.log('signupFormHandler was called');
-
 
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
@@ -9,11 +9,13 @@ async function signupFormHandler (event) {
     // Make a POST request to destroy the session on the back end
     try {
         console.log('POSTing to dom');
-        const response = await fetch('/signup', {
+        await fetch('/api/user/signup', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
+        window.location = '/login';
+        
 
 
     } catch (error) {
@@ -22,8 +24,7 @@ async function signupFormHandler (event) {
 
     }
     
-    event.preventDefault();
-
+    
 }
 
 
