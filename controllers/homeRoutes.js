@@ -46,11 +46,6 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.post('/test', (req, res) => {
-
-  console.log(req.body);
-
-});
 
 router.get('/test', (req, res) => {
 
@@ -70,6 +65,11 @@ router.get('/test', (req, res) => {
 
 
 // });
+
+router.get('/character', (req, res) => {
+  res.render('character');
+});
+
 
 router.get('/search', async (req, res) => {
   console.log(req.query.searchTerm)
