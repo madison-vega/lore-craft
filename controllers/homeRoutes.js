@@ -32,10 +32,11 @@ router.get('/login', (req, res) => {
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy();
-    res.render('/logout');
+    res.render('logout');
   }
 
   else {
+    req.session.destroy();
     res.render('logout');
   }
 
